@@ -64,8 +64,8 @@ if st.button("查詢", type="primary"):
                 st.markdown(f"<h3 style='font-size: 22px;'>🏆 最新校排 ({latest_exam})</h3>", unsafe_allow_html=True)
                 st.metric(label="校排名次", value=latest_rank)
             
-                # 繪製折線圖
-                st.markdown("### 📈 歷次校排趨勢圖")
+                # 繪製折線圖標題 (字體大小與最新校排一致)
+                st.markdown("<h3 style='font-size: 22px;'>📈 歷次校排趨勢圖</h3>", unsafe_allow_html=True)
                 
                 # 使用 Altair 繪製，並設定 Y 軸反轉 (scale=alt.Scale(reverse=True))
                 line_chart = alt.Chart(chart_data).mark_line(point=True).encode(
