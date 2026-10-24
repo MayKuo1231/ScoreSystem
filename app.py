@@ -5,7 +5,8 @@ import altair as alt
 # 1. 網頁基本設定
 st.set_page_config(page_title="歷次校排查詢系統", page_icon="📊")
 
-st.title("📊 歷次校排查詢系統")
+# 修改為主標題 (調整字體大小以適應手機螢幕)
+st.markdown("<h2 style='font-size: 26px;'>📊 歷次校排查詢系統</h2>", unsafe_allow_html=True)
 st.write("請輸入座號與密碼（身分證後四碼）來查詢成績。")
 
 # 讀取資料的函數 (加入快取機制，提升讀取速度)
@@ -59,8 +60,8 @@ if st.button("查詢", type="primary"):
                 latest_exam = chart_data.iloc[-1]["考試名稱"]
                 latest_rank = int(chart_data.iloc[-1]["校排"])
                 
-                # 顯示大大的最新校排數字
-                st.subheader(f"🏆 最新校排 ({latest_exam})")
+                # 修改為次標題 (調整字體大小以適應手機螢幕)
+                st.markdown(f"<h3 style='font-size: 22px;'>🏆 最新校排 ({latest_exam})</h3>", unsafe_allow_html=True)
                 st.metric(label="校排名次", value=latest_rank)
             
                 # 繪製折線圖
