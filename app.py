@@ -27,7 +27,7 @@ st.markdown("請輸入座號與密碼（身分證後四碼）來查詢成績。"
 # 2. 建立登入區塊
 col1, col2 = st.columns(2)
 with col1:
-    student_id = st.text_input("座號 (例如: 1, 15)", max_chars=2)
+    student_id = st.text_input("座號 (例如: 1, 21)", max_chars=2)
 with col2:
     # type="password" 會把輸入內容變成隱藏星號
     password = st.text_input("密碼 (身分證後4碼)", type="password", max_chars=4)
