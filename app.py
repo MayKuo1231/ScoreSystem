@@ -41,7 +41,7 @@ if st.button("查詢", type="primary"):
             # 取得該名學生的姓名
             student_name = student_data.iloc[0]["姓名"]
             
-            # 這裡的歡迎詞順序已經對調
+            # 歡迎詞順序
             st.success(f"{student_name} 同學，登入成功！")
             
             # --- 資料整理與視覺化區塊 ---
@@ -68,7 +68,7 @@ if st.button("查詢", type="primary"):
                 
                 # 使用 Altair 繪製，並設定 Y 軸反轉 (scale=alt.Scale(reverse=True))
                 line_chart = alt.Chart(chart_data).mark_line(point=True).encode(
-                    x=alt.X('考試名稱', sort=None, title='考試次數'), 
+                    x=alt.X('考試名稱', sort=None, title='考試'), 
                     y=alt.Y('校排', scale=alt.Scale(reverse=True), title='校排名次'), 
                     tooltip=['考試名稱', '校排']
                 ).properties(
